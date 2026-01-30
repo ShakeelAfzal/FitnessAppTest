@@ -1,69 +1,68 @@
+//
+//  ContentView.swift
+//  Fitness App
+//
+//  Created by admin on 1/28/26.
+//
 
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        ZStack {
-            Color(red: 0.11, green: 0.11, blue: 0.12)
-                .ignoresSafeArea()
-            
-            ScrollView {
-                VStack(spacing: 0) {
-                    // Header
-                    HeaderView()
-                        .padding(.horizontal, 20)
-                        .padding(.top, 20)
-                    
-                    VStack(spacing: 16) {
-                        // Daily Calorie Tracker
-                        DailyCalorieTrackerCard()
-                        
-                        // Meal Macros
-                        MealMacrosCard()
-                        
-                        // Workout Intensity
-                        WorkoutIntensityCard()
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.top, 24)
-                    .padding(.bottom, 100)
-                }
-            }
-        }
-    }
-}
+    
+    @State private var selectedTab = 0
 
-struct HeaderView: View {
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 4) {
-                HStack(spacing: 4) {
-                    Text("👋")
-                        .font(.system(size: 20))
-                    Text("Welcome back ,")
-                        .font(.system(size: 14))
-                        .foregroundColor(.gray)
+        TabView(selection: $selectedTab) {
+            
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
                 }
-                Text("Dhruv")
-                    .font(.system(size: 32, weight: .bold))
-                    .foregroundColor(.white)
-            }
+                .tag(0)
             
-            Spacer()
+            Text("Workout Screen")
+                .frame(maxWidth: .infinity, maxHeight: .infinity) // make it fill the screen
+                .background(Color.black) // set background to black
+                .foregroundColor(.white)
+                .tabItem {
+                    Image(systemName: "dumbbell.fill")
+                    Text("Workout")
+                }
+                .tag(1)
             
-            // Streak Badge
-            HStack(spacing: 4) {
-                Text("🔥")
-                    .font(.system(size: 16))
-                Text("51")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.white)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(Color(red: 0.15, green: 0.15, blue: 0.16))
-            .cornerRadius(20)
+            Text("Plan Screen")
+                .frame(maxWidth: .infinity, maxHeight: .infinity) // make it fill the screen
+                .background(Color.black) // set background to black
+                .foregroundColor(.white)
+                .tabItem {
+                    Image(systemName: "chart.bar.fill")
+                    Text("Plan")
+                }
+                .tag(2)
+            
+            Text("Calories Screen")
+                .frame(maxWidth: .infinity, maxHeight: .infinity) // make it fill the screen
+                .background(Color.black) // set background to black
+                .foregroundColor(.white)
+                .tabItem {
+                    Image(systemName: "flame.fill")
+                    Text("Calories")
+                }
+                .tag(3)
+            
+            ProfileView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity) // make it fill the screen
+                .background(Color.black) // set background to black
+                .foregroundColor(.white)
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
+                .tag(4)
         }
+//        .accentColor(Color(.sRGB, red: 226/255, green: 146/255, blue: 42/255, opacity: 1)) // optional: active tab color
+        .accentColor(Color(red: 1.0, green: 0.58, blue: 0.0))
     }
 }
 

@@ -9,11 +9,18 @@ struct WorkoutIntensityCard: View {
             // Card Header
             HStack {
                 HStack(spacing: 8) {
-                    Text("🏋️")
-                        .font(.system(size: 16))
+                    
+                    Image("workout")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                    
                     Text("Workout Intensity")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundColor(.white)
+                        .font(.custom("Figtree", size: 14))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 1.0))
+                        .tracking(0)
+                        .lineSpacing(14 * 0.10)
+                        .frame(minWidth: 115, minHeight: 15, alignment: .leading)
                 }
                 
                 Spacer()
@@ -57,39 +64,9 @@ struct WorkoutIntensityCard: View {
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 20)
             .padding(.bottom, 24)
-            
-            // Bottom navigation dots
-            HStack(spacing: 8) {
-                TabIndicator(icon: "house.fill", label: "Home", isActive: true)
-                TabIndicator(icon: "dumbbell.fill", label: "Workout", isActive: false)
-                TabIndicator(icon: "chart.bar.fill", label: "Plan", isActive: false)
-                TabIndicator(icon: "flame.fill", label: "Calories", isActive: false)
-                TabIndicator(icon: "person.fill", label: "Profile", isActive: false)
-            }
-            .padding(.horizontal, 20)
-            .padding(.bottom, 16)
         }
         .background(Color(red: 0.15, green: 0.15, blue: 0.16))
         .cornerRadius(20)
-    }
-}
-
-struct TabIndicator: View {
-    let icon: String
-    let label: String
-    let isActive: Bool
-    
-    var body: some View {
-        VStack(spacing: 4) {
-            Image(systemName: icon)
-                .font(.system(size: 14))
-                .foregroundColor(isActive ? Color(red: 1.0, green: 0.58, blue: 0.0) : .gray)
-            
-            Text(label)
-                .font(.system(size: 10))
-                .foregroundColor(isActive ? Color(red: 1.0, green: 0.58, blue: 0.0) : .gray)
-        }
-        .frame(maxWidth: .infinity)
     }
 }
 
