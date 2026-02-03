@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "carbWhite.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "carbWhite.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

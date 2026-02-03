@@ -25,10 +25,14 @@ struct HomeView: View {
                         
                         // Workout Intensity
                         WorkoutIntensityCard()
+                        
+                        // Calories Trend
+                        CalorieTrendCard()
+                        
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 24)
-                    .padding(.bottom, 100)
+                    .padding(.bottom, 250)
                 }
             }
         }

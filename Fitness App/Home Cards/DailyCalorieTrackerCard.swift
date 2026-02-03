@@ -7,7 +7,7 @@ struct DailyCalorieTrackerCard: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .center, spacing: 0) {
             
             // Card Header
             HStack {
@@ -68,14 +68,13 @@ struct DailyCalorieTrackerCard: View {
             .frame(maxWidth: .infinity)
             .padding(.top, 100)
             
-            HStack(spacing: 20) {
+            HStack(spacing: UIScreen.main.bounds.width * 0.10) {
                 StatView(label: "Calorie Intake", value: "\(self.currentCal)kcal")
                 
                 StatView(label: "Calorie Burned", value: "\(Int(self.calGoal) ?? 0 - (Int(self.currentCal) ?? 0))kcal")
                 
                 StatView(label: "Calorie Goal", value: "\(self.calGoal)kcal")
             }
-            .padding(.leading, 40)
             .padding(.bottom, 20)
         }
         .background(
@@ -134,7 +133,6 @@ struct StatView: View {
                         .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.65))
                         .tracking(-10 * 0.02)
                         .lineSpacing(10 * 0.10)
-//                        .frame(minWidth: 59, minHeight: 11, alignment: .leading)
                     
                     Text(value)
                         .font(.custom("GeistMono-Medium", size: 13))
@@ -143,11 +141,9 @@ struct StatView: View {
                         .tracking(-13 * 0.03)
                         .lineSpacing(13 * 0.10)
                         .multilineTextAlignment(.trailing)
-//                        .frame(width: 70, height: 14, alignment: .trailing)
                 }
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     private func getStatColor() -> Color {
