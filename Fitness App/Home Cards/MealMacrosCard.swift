@@ -44,13 +44,13 @@ struct MealMacrosCard: View {
             // Semi-circular macro visualization - concentric rings
             ZStack {
                 // Fats (cyan) - innermost ring
-                SemiCircleSegment(icon: "carbWhite", startAngle: 90, endAngle: self.getFatsValue(), color: Color(red: 0.0, green: 0.65, blue: 0.96), radius: 50, thickness: 20)
+                SemiCircleSegment(icon: "fatWhite", startAngle: 90, endAngle: self.getFatsValue(), color: Color(red: 0.0, green: 0.65, blue: 0.96), radius: 50, thickness: 20)
                 
                 // Protein (green) - middle ring
                 SemiCircleSegment(icon: "proteinWhite", startAngle: 90, endAngle: self.getProteinValue(), color: Color(red: 0.18, green: 0.83, blue: 0.43), radius: 75, thickness: 20)
                 
                 // Carbs (orange) - outermost ring
-                SemiCircleSegment(icon: "fatWhite", startAngle: 90, endAngle: self.getCarbsValue(), color: Color(red: 1.0, green: 0.52, blue: 0.0), radius: 100, thickness: 20)
+                SemiCircleSegment(icon: "carbWhite", startAngle: 90, endAngle: self.getCarbsValue(), color: Color(red: 1.0, green: 0.52, blue: 0.0), radius: 100, thickness: 20)
             }
             .frame(height: 60)
             .frame(maxWidth: .infinity)
@@ -183,7 +183,7 @@ struct MacroStatCard: View {
                     .frame(width: 10, height: 10)
                 
                 Text(label)
-                    .font(.custom("Figtree", size: 10))
+                    .font(.custom("Figtree", size: 11))
                     .fontWeight(.regular)
                     .foregroundColor(Color(red: 1.0, green: 0.52, blue: 0.0))
                     .tracking(0)
@@ -201,7 +201,6 @@ struct MacroStatCard: View {
                     .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.95))
                     .tracking(-22 * 0.03)
                     .lineSpacing(22 * 0.10)
-//                    .frame(width: 51, height: 24)
                 
                 Text(goal)
                     .font(.custom("GeistMono-Medium", size: 14))
@@ -209,7 +208,6 @@ struct MacroStatCard: View {
                     .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.5))
                     .tracking(-14 * 0.03)
                     .lineSpacing(14 * 0.10)
-//                    .frame(width: 33, height: 15)
             }
         }
         .frame(maxWidth: .infinity)

@@ -128,7 +128,7 @@ struct StatView: View {
                 VStack (alignment: .leading) {
                     
                     Text(label)
-                        .font(.custom("Figtree", size: 10))
+                        .font(.custom("Figtree", size: 11))
                         .fontWeight(.regular)
                         .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.65))
                         .tracking(-10 * 0.02)

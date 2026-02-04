@@ -34,7 +34,7 @@ struct WorkoutIntensityCard: View {
             .padding(.bottom, 16)
             
             Text("Last 8 weeks")
-                .font(.custom("Figtree", size: 10))
+                .font(.custom("Figtree", size: 12))
                 .fontWeight(.regular)
                 .foregroundColor(Color.white.opacity(0.5))
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -66,7 +66,7 @@ struct WorkoutIntensityCard: View {
             // Legend
             HStack(spacing: 8) {
                 Text("Low")
-                    .font(.custom("Figtree", size: 10))
+                    .font(.custom("Figtree", size: 12))
                     .fontWeight(.regular)
                     .foregroundColor(Color.white.opacity(0.5))
                 
@@ -89,7 +89,7 @@ struct WorkoutIntensityCard: View {
                 }
                 
                 Text("High")
-                    .font(.custom("Figtree", size: 10))
+                    .font(.custom("Figtree", size: 12))
                     .fontWeight(.regular)
                     .foregroundColor(Color.white.opacity(0.5))
             }

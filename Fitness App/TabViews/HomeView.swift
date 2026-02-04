@@ -28,11 +28,24 @@ struct HomeView: View {
                         
                         // Calories Trend
                         CalorieTrendCard()
+                            .frame(height: 220)
                         
+                        // Last weight and Today's workout
+                        HStack (spacing: 16) {
+                            
+                            LastWeightCard()
+                            
+                            TodayWorkoutCard()
+                        }
+                        
+                        ProfileStrengthCard()
+                        
+                        
+                        Spacer()
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 24)
-                    .padding(.bottom, 250)
+//                    .padding(.bottom, 250)
                 }
             }
         }
@@ -88,4 +101,18 @@ struct HomeHeaderView: View {
 
 #Preview {
     HomeView()
+}
+
+
+struct EqualHeightCard<Content: View>: View {
+    let content: Content
+
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    var body: some View {
+        content
+            .frame(maxHeight: .infinity)
+    }
 }
